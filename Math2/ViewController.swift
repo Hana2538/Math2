@@ -10,13 +10,16 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
+    
     let AnswerPlayer = try!AVAudioPlayer(data: NSDataAsset(name:"CorrectA")!.data)
     let NotAnswerPlayer = try!AVAudioPlayer(data: NSDataAsset(name:"IncorrectA")!.data)
     
-    var number: Int!
+    var ViewNumber2: Int!
     var number1: Int!
     var number2: Int!
     var number3: Int!
+    var Marknum1: Int!
+    var Marknum2: Int!
     
     var num1: String!
     var num2: String!
@@ -56,7 +59,9 @@ class ViewController: UIViewController {
     
     var select = 0
     
-
+    
+   
+    
     override func viewDidLoad() {
         based()
         label1.layer.cornerRadius = 10
@@ -192,47 +197,38 @@ class ViewController: UIViewController {
     
     @IBAction func sameNumber1(){
         set(button: AnswerNumber3, str: "1")
-        //set(button: AnswerNumber4, str: "1")
     }
     
     @IBAction func sameNumber2(){
         set(button: AnswerNumber3, str: "2")
-        //set(button: AnswerNumber4, str: "2")
     }
     
     @IBAction func sameNumber3(){
         set(button: AnswerNumber3, str: "3")
-        //set(button: AnswerNumber4, str: "3")
     }
     
     @IBAction func sameNumber4(){
         set(button: AnswerNumber3, str: "4")
-        //set(button: AnswerNumber4, str: "4")
     }
     
     @IBAction func sameNumber5(){
         set(button: AnswerNumber3, str: "5")
-        //set(button: AnswerNumber4, str: "5")
     }
     
     @IBAction func sameNumber6(){
         set(button: AnswerNumber3, str: "6")
-        //set(button: AnswerNumber4, str: "6")
     }
     
     @IBAction func sameNumber7(){
         set(button: AnswerNumber3, str: "7")
-        //set(button: AnswerNumber4, str: "7")
     }
     
     @IBAction func sameNumber8(){
         set(button: AnswerNumber3, str: "8")
-        //set(button: AnswerNumber4, str: "8")
     }
     
     @IBAction func sameNumber9(){
         set(button: AnswerNumber3, str: "9")
-        //set(button: AnswerNumber4, str: "9")
     }
     
     @IBAction func AnswerCheckButton(){
@@ -242,7 +238,7 @@ class ViewController: UIViewController {
         var currentNumber1: Int = 0
         var currentNumber2: Int = 0
         
-        print(MarkButton1.titleLabel?.text)
+        print(MarkButton1.titleLabel!.text)
         print(MarkButton2.currentTitle)
         
         Anumber1 = Int(num1)
@@ -286,7 +282,7 @@ class ViewController: UIViewController {
         print(currentNumber2)
         print(answerText1)
         print(answerText2)
-        if currentNumber2 == number{
+        if currentNumber2 == ViewNumber2{
             AnswerPlayer.play()
             print("正解")
         }else {
@@ -297,21 +293,68 @@ class ViewController: UIViewController {
     
     func based(){
         
-        number = Int.random(in: 1...15)
         number1 = Int.random(in: 1...9)
         number2 = Int.random(in: 1...9)
         number3 = Int.random(in: 1...9)
         
-        num1 = String(number1)
-        num2 = String(number2)
-        num3 = String(number3)
-
+        let num1 = String(number1)
+        let num2 = String(number2)
+        let num3 = String(number3)
         
-        label1.text = String(number)
-        label2.text = String(number)
+        Marknum1 = Int.random(in: 1...4)
+        Marknum2 = Int.random(in: 1...4)
+        
+        var ViewNumber1: Int = 0
+        var ViewNumber2: Int = 0
+        
+        if Marknum1 == 1{
+            ViewNumber1 = number1 + number2
+        }else if Marknum1 == 2{
+            ViewNumber1 = number1 - number2
+        }else if Marknum1 == 3{
+            ViewNumber1 = number1 * number2
+        }
+        
+        if Marknum1 == 4{
+            while(ViewNumber1 == 0){
+                ViewNumber1 = number1 - number2
+                if ViewNumber1 < number2{
+                    break
+                }
+            }
+        }
+        
+        if Marknum2 == 1{
+            ViewNumber2 = ViewNumber1 + number3
+        }else if Marknum2 == 2{
+            ViewNumber2 = ViewNumber1 - number3
+        }else if Marknum2 == 3{
+            ViewNumber2 = ViewNumber1 * number3
+        }
+        
+        if Marknum2 == 4{
+            while(ViewNumber2 == 0){
+                ViewNumber2 = ViewNumber1 - number3
+                if ViewNumber2 < number3{
+                    break
+                }
+            }
+        }
+        
+        label1.text = String(ViewNumber2)
+        label2.text = String(ViewNumber2)
         set(button: Button1, str: self.num1)
         set(button: Button2, str: self.num2)
         set(button: Button3, str: self.num3)
+        
+    
+        
+    }
+    
+    func circle(){
+        number1 = Int.random(in: 1...9)
+        number2 = Int.random(in: 1...9)
+        number3 = Int.random(in: 1...9)
         
     }
     
