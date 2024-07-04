@@ -63,6 +63,8 @@ class ViewController: UIViewController {
    
     
     override func viewDidLoad() {
+    
+        
         based()
         label1.layer.cornerRadius = 10
         label1.clipsToBounds = true
@@ -238,8 +240,8 @@ class ViewController: UIViewController {
         var currentNumber1: Int = 0
         var currentNumber2: Int = 0
         
-        print(MarkButton1.titleLabel!.text)
-        print(MarkButton2.currentTitle)
+        //print(MarkButton1.titleLabel!.text)
+        //print(MarkButton2.currentTitle)
         
         Anumber1 = Int(num1)
         Anumber2 = Int(num2)
@@ -297,9 +299,13 @@ class ViewController: UIViewController {
         number2 = Int.random(in: 1...9)
         number3 = Int.random(in: 1...9)
         
-        let num1 = String(number1)
-        let num2 = String(number2)
-        let num3 = String(number3)
+        number1 = number1 ?? 0
+        number2 = number2 ?? 0
+        number3 = number3 ?? 0
+        
+        num1 = String(number1)
+        num2 = String(number2)
+        num3 = String(number3)
         
         Marknum1 = Int.random(in: 1...4)
         Marknum2 = Int.random(in: 1...4)
@@ -318,7 +324,7 @@ class ViewController: UIViewController {
         if Marknum1 == 4{
             while(ViewNumber1 == 0){
                 ViewNumber1 = number1 - number2
-                if ViewNumber1 < number2{
+                if ViewNumber1 < 1{
                     break
                 }
             }
@@ -332,14 +338,18 @@ class ViewController: UIViewController {
             ViewNumber2 = ViewNumber1 * number3
         }
         
+        print(Marknum1)
+        
         if Marknum2 == 4{
             while(ViewNumber2 == 0){
                 ViewNumber2 = ViewNumber1 - number3
-                if ViewNumber2 < number3{
+                if ViewNumber2 < 1{
                     break
                 }
             }
         }
+        
+        print(Marknum2)
         
         label1.text = String(ViewNumber2)
         label2.text = String(ViewNumber2)
