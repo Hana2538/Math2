@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     let NotAnswerPlayer = try!AVAudioPlayer(data: NSDataAsset(name:"IncorrectA")!.data)
     
     var ViewNumber2: Int!
+    var ShortAnswer: String!
     var number1: Int!
     var number2: Int!
     var number3: Int!
@@ -113,20 +114,24 @@ class ViewController: UIViewController {
         select = 2
     }
     
-    @IBAction func changeButton3(){
-        select = 3
-    }
-    
     @IBAction func changeButton4(){
         select = 4
     }
     
-    @IBAction func markcheck1(){
-        select = 5
+    @IBAction func pluser(){
+        select = 3
     }
     
-    @IBAction func markcheck2(){
+    @IBAction func minuser(){
+        select = 5
+    }
+
+    @IBAction func timer(){
         select = 6
+    }
+    
+    @IBAction func divisioner (){
+        select = 7
     }
     
     
@@ -197,44 +202,38 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func sameNumber1(){
-        set(button: AnswerNumber3, str: "1")
+    @IBAction func ShortButton(){
+        
+        var ShortAnswer: Int = 0
+        
+        if(select == 7){
+            while(ShortAnswer == 0){
+                ShortAnswer = Anumber1 - Anumber2
+                if ShortAnswer < Anumber3{
+                    break
+                }
+            }
+        }
+        
+        if(select == 3){
+            ShortAnswer = Anumber1 + Anumber2
+            set(button: AnswerNumber3, str: self.ShortAnswer)
+        }else if(select == 5){
+            ShortAnswer = Anumber1 - Anumber2
+            set(button: AnswerNumber3, str: self.ShortAnswer)
+        }else if(select == 6){
+            ShortAnswer = Anumber1 * Anumber2
+            set(button: AnswerNumber3, str: self.ShortAnswer)
+        }
     }
     
-    @IBAction func sameNumber2(){
-        set(button: AnswerNumber3, str: "2")
-    }
     
-    @IBAction func sameNumber3(){
-        set(button: AnswerNumber3, str: "3")
-    }
     
-    @IBAction func sameNumber4(){
-        set(button: AnswerNumber3, str: "4")
-    }
     
-    @IBAction func sameNumber5(){
-        set(button: AnswerNumber3, str: "5")
-    }
     
-    @IBAction func sameNumber6(){
-        set(button: AnswerNumber3, str: "6")
-    }
-    
-    @IBAction func sameNumber7(){
-        set(button: AnswerNumber3, str: "7")
-    }
-    
-    @IBAction func sameNumber8(){
-        set(button: AnswerNumber3, str: "8")
-    }
-    
-    @IBAction func sameNumber9(){
-        set(button: AnswerNumber3, str: "9")
-    }
+
     
     @IBAction func AnswerCheckButton(){
-        
         var answerText1:String=MarkButton1.titleLabel?.text ?? ""
         var answerText2:String=MarkButton2.titleLabel?.text ?? ""
         var currentNumber1: Int = 0
@@ -284,6 +283,7 @@ class ViewController: UIViewController {
         print(currentNumber2)
         print(answerText1)
         print(answerText2)
+        print(ViewNumber2)
         if currentNumber2 == ViewNumber2{
             AnswerPlayer.play()
             print("正解")
