@@ -47,6 +47,7 @@ class ViewController: UIViewController {
     @IBOutlet var calculatButton2: UIButton!
     @IBOutlet var calculatButton3: UIButton!
     @IBOutlet var calculatButton4: UIButton!
+    @IBOutlet var numberButon0: UIButton!
     @IBOutlet var numberButon1: UIButton!
     @IBOutlet var numberButon2: UIButton!
     @IBOutlet var numberButon3: UIButton!
@@ -75,6 +76,7 @@ class ViewController: UIViewController {
         label2.clipsToBounds = true
         super.viewDidLoad()
         
+        set(button: numberButon0, str: "0")
         set(button: numberButon1, str: "1")
         set(button: numberButon2, str: "2")
         set(button: numberButon3, str: "3")
@@ -131,6 +133,10 @@ class ViewController: UIViewController {
     }
     @IBAction func changeButton6(){
         select = 7
+    }
+    
+    @IBAction func changeButton8(){
+        select = 8
     }
     
     
@@ -205,11 +211,23 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func sameNumber0(){
+            if(select == 6){
+                set(button: AnswerNumber3, str: "0")
+            }else if (select == 7){
+                set(button: AnswerNumber4, str: "0")
+            }else if (select == 8){
+                set(button: AnswerNumber5, str: "0")
+            }
+        }
+    
     @IBAction func sameNumber1(){
             if(select == 6){
                 set(button: AnswerNumber3, str: "1")
             }else if (select == 7){
                 set(button: AnswerNumber4, str: "1")
+            }else if (select == 8){
+                set(button: AnswerNumber5, str: "1")
             }
         }
         
@@ -218,6 +236,8 @@ class ViewController: UIViewController {
                 set(button: AnswerNumber3, str: "2")
             }else if (select == 7){
                 set(button: AnswerNumber4, str: "2")
+            }else if (select == 8){
+                set(button: AnswerNumber5, str: "2")
             }
         }
     @IBAction func sameNumber3(){
@@ -225,6 +245,8 @@ class ViewController: UIViewController {
                 set(button: AnswerNumber3, str: "3")
             }else if (select == 7){
                 set(button: AnswerNumber4, str: "3")
+            }else if (select == 8){
+                set(button: AnswerNumber5, str: "3")
             }
         }
         
@@ -233,6 +255,8 @@ class ViewController: UIViewController {
                 set(button: AnswerNumber3, str: "4")
             }else if (select == 7){
                 set(button: AnswerNumber4, str: "4")
+            }else if (select == 8){
+                set(button: AnswerNumber5, str: "4")
             }
         }
 
@@ -241,6 +265,8 @@ class ViewController: UIViewController {
                 set(button: AnswerNumber3, str: "5")
             }else if (select == 7){
                 set(button: AnswerNumber4, str: "5")
+            }else if (select == 8){
+                set(button: AnswerNumber5, str: "5")
             }
         }
         
@@ -249,6 +275,8 @@ class ViewController: UIViewController {
                 set(button: AnswerNumber3, str: "6")
             }else if (select == 7){
                 set(button: AnswerNumber4, str: "6")
+            }else if (select == 8){
+                set(button: AnswerNumber5, str: "6")
             }
         }
         
@@ -257,6 +285,8 @@ class ViewController: UIViewController {
                 set(button: AnswerNumber3, str: "7")
             }else if (select == 7){
                 set(button: AnswerNumber4, str: "7")
+            }else if (select == 8){
+                set(button: AnswerNumber5, str: "7")
             }
         }
         
@@ -265,6 +295,8 @@ class ViewController: UIViewController {
                 set(button: AnswerNumber3, str: "8")
             }else if (select == 7){
                 set(button: AnswerNumber4, str: "8")
+            }else if (select == 8){
+                set(button: AnswerNumber5, str: "8")
             }
         }
         
@@ -273,41 +305,10 @@ class ViewController: UIViewController {
                 set(button: AnswerNumber3, str: "9")
             }else if (select == 7){
                 set(button: AnswerNumber4, str: "9")
+            }else if (select == 8){
+                set(button: AnswerNumber5, str: "9")
             }
         }
-
-
-
-    
-    @IBAction func ShortButton(){
-        
-        var ShortAnswer: Int = 0
-        
-        if(select == 7){
-            while(ShortAnswer == 0){
-                ShortAnswer = Anumber1 - Anumber2
-                if ShortAnswer < Anumber3{
-                    break
-                }
-            }
-        }
-        
-        if(select == 3){
-            ShortAnswer = Anumber1 + Anumber2
-            set(button: AnswerNumber3, str: self.ShortAnswer)
-        }else if(select == 5){
-            ShortAnswer = Anumber1 - Anumber2
-            set(button: AnswerNumber3, str: self.ShortAnswer)
-        }else if(select == 6){
-            ShortAnswer = Anumber1 * Anumber2
-            set(button: AnswerNumber3, str: self.ShortAnswer)
-        }
-    }
-    
-    
-    
-    
-    
 
     
     @IBAction func AnswerCheckButton(){
@@ -315,6 +316,8 @@ class ViewController: UIViewController {
         var answerText2:String=MarkButton2.titleLabel?.text ?? ""
         var currentNumber1: Int = 0
         var currentNumber2: Int = 0
+        var subNumber1: Int = 0
+        var subNumber2: Int = 0
         
         //print(MarkButton1.titleLabel!.text)
         //print(MarkButton2.currentTitle)
@@ -336,9 +339,10 @@ class ViewController: UIViewController {
         print(Anumber3)
         
         if answerText1 == "÷"{
-            while(currentNumber1 == 0){
-                currentNumber1 = Anumber1 - Anumber2
-                if currentNumber1 < Anumber2{
+            while(subNumber1 > 0){
+                currentNumber1 = Anumber1 / Anumber2
+                subNumber1 = Anumber1 % Anumber2
+                if subNumber1 == 0{
                     break
                 }
             }
@@ -353,9 +357,10 @@ class ViewController: UIViewController {
         }
         
         if answerText2 == "÷"{
-            while(currentNumber2 == 0){
-                currentNumber2 = currentNumber1 - Anumber3
-                if currentNumber2 < Anumber3{
+            while(subNumber2 > 0){
+                currentNumber2 = currentNumber1 / Anumber3
+                subNumber2 = currentNumber1 % Anumber3
+                if subNumber2 == 0{
                     break
                 }
             }
@@ -392,7 +397,10 @@ class ViewController: UIViewController {
         Marknum2 = Int.random(in: 1...4)
         
         var ViewNumber1: Int = 0
-//        var ViewNumber2: Int = 0
+        ViewNumber2 = 0
+        var subNumber3: Int = 0
+        var subNumber4: Int = 0
+
         
         if Marknum1 == 1{
             ViewNumber1 = number1 + number2
@@ -405,41 +413,59 @@ class ViewController: UIViewController {
         while(ViewNumber1 >= 10){
             number1 = Int.random(in: 1...9)
             number2 = Int.random(in: 1...9)
+            
+            if Marknum1 == 1{
+                ViewNumber1 = number1 + number2
+            }else if Marknum1 == 2{
+                ViewNumber1 = number1 - number2
+            }else if Marknum1 == 3{
+                ViewNumber1 = number1 * number2
+            }
+            
             if ViewNumber1 < 10 && ViewNumber1 > 0{
                 break
             }
         }
         
         if Marknum1 == 4{
-            while(ViewNumber1 == 0){
-                ViewNumber1 = number1 - number2
-                if ViewNumber1 < 1{
+            while(subNumber3 > 0){
+                ViewNumber1 = number1 / number2
+                subNumber3 = number1 % number2
+                if subNumber3 == 0{
                     break
                 }
             }
         }
-        
-        if Marknum2 == 1{
-            ViewNumber2 = ViewNumber1 + number3
-        }else if Marknum2 == 2{
-            ViewNumber2 = ViewNumber1 - number3
-        }else if Marknum2 == 3{
-            ViewNumber2 = ViewNumber1 * number3
-        }
-        
-        
         print(Marknum1)
         
         if Marknum2 == 4{
-            while(ViewNumber2 == 0){
-                print("!!")
-                ViewNumber2 = ViewNumber1 - number3
-                if ViewNumber2 < 1{
+            while(subNumber4 > 0){
+                ViewNumber2 = ViewNumber1 / number3
+                subNumber4 = ViewNumber1 % number3
+                if subNumber4 == 0{
                     break
                 }
             }
         }
         
+        while(ViewNumber2 < 0){
+            
+            if Marknum2 == 1{
+                ViewNumber2 = ViewNumber1 + number3
+            }else if Marknum2 == 2{
+                ViewNumber2 = ViewNumber1 - number3
+            }else if Marknum2 == 3{
+                ViewNumber2 = ViewNumber1 * number3
+            }else if Marknum2 == 4{
+                while(subNumber4 > 0){
+                    ViewNumber2 = ViewNumber1 / number3
+                    subNumber4 = ViewNumber1 % number3
+                    if subNumber4 == 0{
+                        break
+                    }
+                }
+            }
+        }
         print(Marknum2)
         print(ViewNumber1)
         
@@ -450,15 +476,6 @@ class ViewController: UIViewController {
         set(button: Button3, str: self.num3)
         
     }
-    
-    
-    
-    //func circle(){
-        //number1 = Int.random(in: 1...9)
-        //number2 = Int.random(in: 1...9)
-        //number3 = Int.random(in: 1...9)
-        
-    //}
     
     func set(button: UIButton,str: String) {
         button.configurationUpdateHandler = { button in
