@@ -319,9 +319,6 @@ class ViewController: UIViewController {
         var subNumber1: Int = 0
         var subNumber2: Int = 0
         
-        //print(MarkButton1.titleLabel!.text)
-        //print(MarkButton2.currentTitle)
-        
         Anumber1 = Int(num1)
         Anumber2 = Int(num2)
         Anumber3 = Int(num3)
@@ -332,13 +329,7 @@ class ViewController: UIViewController {
             currentNumber1 = Anumber1 - Anumber2
         }else if answerText1 == "×"{
             currentNumber1 = Anumber1 * Anumber2
-        }
-        
-        print(Anumber1)
-        print(Anumber2)
-        print(Anumber3)
-        
-        if answerText1 == "÷"{
+        }else if answerText1 == "÷"{
             while(subNumber1 > 0){
                 currentNumber1 = Anumber1 / Anumber2
                 subNumber1 = Anumber1 % Anumber2
@@ -347,16 +338,14 @@ class ViewController: UIViewController {
                 }
             }
         }
-            
+    
         if answerText2 == "+"{
             currentNumber2 = currentNumber1 + Anumber3
         }else if answerText2 == "-"{
             currentNumber2 = currentNumber1 - Anumber3
         }else if answerText2 == "×"{
             currentNumber2 = currentNumber1 * Anumber3
-        }
-        
-        if answerText2 == "÷"{
+        }else if answerText2 == "÷"{
             while(subNumber2 > 0){
                 currentNumber2 = currentNumber1 / Anumber3
                 subNumber2 = currentNumber1 % Anumber3
@@ -365,11 +354,8 @@ class ViewController: UIViewController {
                 }
             }
         }
-        print(currentNumber1)
-        print(currentNumber2)
-        print(answerText1)
-        print(answerText2)
-        print(ViewNumber2)
+        
+
         if currentNumber2 == ViewNumber2{
             AnswerPlayer.play()
             print("正解")
@@ -396,6 +382,7 @@ class ViewController: UIViewController {
         Marknum1 = Int.random(in: 1...4)
         Marknum2 = Int.random(in: 1...4)
         
+    
         var ViewNumber1: Int = 0
         ViewNumber2 = 0
         var subNumber3: Int = 0
@@ -408,6 +395,14 @@ class ViewController: UIViewController {
             ViewNumber1 = number1 - number2
         }else if Marknum1 == 3{
             ViewNumber1 = number1 * number2
+        }else if Marknum1 == 4{
+            while(subNumber3 > 0){
+                ViewNumber1 = number1 / number2
+                subNumber3 = number1 % number2
+                if subNumber3 == 0{
+                    break
+                }
+            }
         }
         
         while(ViewNumber1 >= 10){
@@ -427,18 +422,13 @@ class ViewController: UIViewController {
             }
         }
         
-        if Marknum1 == 4{
-            while(subNumber3 > 0){
-                ViewNumber1 = number1 / number2
-                subNumber3 = number1 % number2
-                if subNumber3 == 0{
-                    break
-                }
-            }
-        }
-        print(Marknum1)
-        
-        if Marknum2 == 4{
+        if Marknum2 == 1{
+            ViewNumber2 = ViewNumber1 + number3
+        }else if Marknum2 == 2{
+            ViewNumber2 = ViewNumber1 - number3
+        }else if Marknum2 == 3{
+            ViewNumber2 = ViewNumber1 * number3
+        }else if Marknum2 == 4{
             while(subNumber4 > 0){
                 ViewNumber2 = ViewNumber1 / number3
                 subNumber4 = ViewNumber1 % number3
@@ -447,6 +437,7 @@ class ViewController: UIViewController {
                 }
             }
         }
+        
         
         while(ViewNumber2 < 0){
             
@@ -466,8 +457,6 @@ class ViewController: UIViewController {
                 }
             }
         }
-        print(Marknum2)
-        print(ViewNumber1)
         
         label1.text = String(ViewNumber2)
         label2.text = String(ViewNumber2)
