@@ -480,6 +480,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="passButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="ggj-XC-qOy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Le3-Jd-CId">
                                 <rect key="frame" x="166" y="338" width="52" height="62"/>

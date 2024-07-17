@@ -108,6 +108,19 @@ class ViewController: UIViewController {
         based()
     }
     
+    @IBAction func passButton(){
+        
+        set(button: AnswerNumber1, str: "0")
+        set(button: AnswerNumber2, str: "0")
+        set(button: AnswerNumber3, str: "0")
+        set(button: AnswerNumber4, str: "0")
+        set(button: AnswerNumber5, str: "0")
+        set(button: MarkButton1, str: "?")
+        set(button: MarkButton2, str: "?")
+        
+        
+        based()
+    }
     
     @IBAction func changeButton1(){
         select = 1
@@ -422,8 +435,14 @@ class ViewController: UIViewController {
         num2 = String(number2)
         num3 = String(number3)
         
+        print(number1)
+        print(number2)
+        print(number3)
+       
         Marknum1 = Int.random(in: 1...4)
         Marknum2 = Int.random(in: 1...4)
+        print(Marknum1)
+        print(Marknum2)
         
     
         var ViewNumber1: Int = 0
@@ -500,6 +519,9 @@ class ViewController: UIViewController {
                 }
             }
         }
+        
+        print(ViewNumber2)
+        
         label1.text = String(ViewNumber2)
         label2.text = String(ViewNumber2)
         set(button: Button1, str: self.num1)
