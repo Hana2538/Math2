@@ -508,7 +508,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="changeButton4" destination="BYZ-38-t0r" eventType="touchUpInside" id="eeo-HR-xbh"/>
-                                    <action selector="changeButton8" destination="BYZ-38-t0r" eventType="touchUpInside" id="9b4-xx-FdC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kT2-1S-5BB">
@@ -644,7 +643,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

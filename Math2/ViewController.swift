@@ -244,7 +244,7 @@ class ViewController: UIViewController {
             }else if (select == 7){
                 set(button: AnswerNumber4, str: "0")
                 Anumber4 = Int(0)
-            }else if (select == 8){
+            }else if (select == 4){
                 set(button: AnswerNumber5, str: "0")
                 Anumber5 = Int(0)
             }
@@ -257,7 +257,7 @@ class ViewController: UIViewController {
             }else if (select == 7){
                 set(button: AnswerNumber4, str: "1")
                 Anumber4 = Int(1)
-            }else if (select == 8){
+            }else if (select == 4){
                 set(button: AnswerNumber5, str: "1")
                 Anumber5 = Int(1)
             }
@@ -270,7 +270,7 @@ class ViewController: UIViewController {
             }else if (select == 7){
                 set(button: AnswerNumber4, str: "2")
                 Anumber4 = Int(2)
-            }else if (select == 8){
+            }else if (select == 4){
                 set(button: AnswerNumber5, str: "2")
                 Anumber5 = Int(2)
             }
@@ -282,7 +282,7 @@ class ViewController: UIViewController {
             }else if (select == 7){
                 set(button: AnswerNumber4, str: "3")
                 Anumber4 = Int(3)
-            }else if (select == 8){
+            }else if (select == 4){
                 set(button: AnswerNumber5, str: "3")
                 Anumber5 = Int(3)
             }
@@ -295,7 +295,7 @@ class ViewController: UIViewController {
             }else if (select == 7){
                 set(button: AnswerNumber4, str: "4")
                 Anumber4 = Int(4)
-            }else if (select == 8){
+            }else if (select == 4){
                 set(button: AnswerNumber5, str: "4")
                 Anumber5 = Int(4)
             }
@@ -308,7 +308,7 @@ class ViewController: UIViewController {
             }else if (select == 7){
                 set(button: AnswerNumber4, str: "5")
                 Anumber4 = Int(5)
-            }else if (select == 8){
+            }else if (select == 4){
                 set(button: AnswerNumber5, str: "5")
                 Anumber5 = Int(5)
             }
@@ -321,7 +321,7 @@ class ViewController: UIViewController {
             }else if (select == 7){
                 set(button: AnswerNumber4, str: "6")
                 Anumber4 = Int(6)
-            }else if (select == 8){
+            }else if (select == 4){
                 set(button: AnswerNumber5, str: "6")
                 Anumber5 = Int(6)
             }
@@ -334,7 +334,7 @@ class ViewController: UIViewController {
             }else if (select == 7){
                 set(button: AnswerNumber4, str: "7")
                 Anumber4 = Int(7)
-            }else if (select == 8){
+            }else if (select == 4){
                 set(button: AnswerNumber5, str: "7")
                 Anumber5 = Int(7)
             }
@@ -347,7 +347,7 @@ class ViewController: UIViewController {
             }else if (select == 7){
                 set(button: AnswerNumber4, str: "8")
                 Anumber4 = Int(8)
-            }else if (select == 8){
+            }else if (select == 4){
                 set(button: AnswerNumber5, str: "8")
                 Anumber5 = Int(8)
             }
@@ -360,7 +360,7 @@ class ViewController: UIViewController {
             }else if (select == 7){
                 set(button: AnswerNumber4, str: "9")
                 Anumber4 = Int(9)
-            }else if (select == 8){
+            }else if (select == 4){
                 set(button: AnswerNumber5, str: "9")
                 Anumber5 = Int(9)
             }
@@ -453,49 +453,106 @@ class ViewController: UIViewController {
         
         if Marknum1 == 1{
             ViewNumber1 = number1 + number2
-        }else if Marknum1 == 2{
+        }else if Marknum1 == 2 && number1 > number2{
             ViewNumber1 = number1 - number2
+        }else if Marknum1 == 2 && number2 > number1{
+            ViewNumber1 = number2 - number1
         }else if Marknum1 == 3{
             ViewNumber1 = number1 * number2
-        }else if Marknum1 == 4{
-            while(subNumber3 > 0){
-                ViewNumber1 = number1 / number2
-                subNumber3 = number1 % number2
+        }
+        if Marknum1 == 4 && number1 > number2{
+            ViewNumber1 = number1 / number2
+            subNumber3 = number1 % number2
+            while (subNumber3 > 0){
+                number1 = Int.random(in: 1...9)
+                number2 = Int.random(in: 1...9)
+                if subNumber3 == 0{
+                    break
+                }
+            }
+            
+        }else if Marknum1 == 4 && number1 > number2{
+            ViewNumber1 = number1 / number2
+            subNumber3 = number1 % number2
+            while (subNumber3 > 0){
+                number1 = Int.random(in: 1...9)
+                number2 = Int.random(in: 1...9)
                 if subNumber3 == 0{
                     break
                 }
             }
         }
         
+        
         while(ViewNumber1 >= 10){
             number1 = Int.random(in: 1...9)
             number2 = Int.random(in: 1...9)
-            
             if Marknum1 == 1{
                 ViewNumber1 = number1 + number2
-            }else if Marknum1 == 2{
+            }else if Marknum1 == 2 && number1 > number2{
                 ViewNumber1 = number1 - number2
+            }else if Marknum1 == 2 && number2 > number1{
+                ViewNumber1 = number2 - number1
             }else if Marknum1 == 3{
                 ViewNumber1 = number1 * number2
             }
-            
-            if ViewNumber1 < 10 && ViewNumber1 > 0{
-                break
+            if Marknum1 == 4 && number1 > number2{
+                ViewNumber1 = number1 / number2
+                subNumber3 = number1 % number2
+                while (subNumber3 > 0){
+                    number1 = Int.random(in: 1...9)
+                    number2 = Int.random(in: 1...9)
+                    if subNumber3 == 0{
+                        break
+                    }
+                }
+                
+            }else if Marknum1 == 4 && number1 > number2{
+                ViewNumber1 = number1 / number2
+                subNumber3 = number1 % number2
+                while (subNumber3 > 0){
+                    number1 = Int.random(in: 1...9)
+                    number2 = Int.random(in: 1...9)
+                    if subNumber3 == 0{
+                        break
+                    }
+                }
             }
         }
         
         if Marknum2 == 1{
             ViewNumber2 = ViewNumber1 + number3
-        }else if Marknum2 == 2{
+        }else if Marknum2 == 2 && ViewNumber1 > number3{
             ViewNumber2 = ViewNumber1 - number3
+        }else if Marknum2 == 2 && number3 > ViewNumber1{
+            ViewNumber2 = number3 - ViewNumber1
         }else if Marknum2 == 3{
             ViewNumber2 = ViewNumber1 * number3
-        }else if Marknum2 == 4{
-            while(subNumber4 > 0){
-                ViewNumber2 = ViewNumber1 / number3
-                subNumber4 = ViewNumber1 % number3
-                if subNumber4 == 0{
+        }
+        if Marknum1 == 4 && ViewNumber1 > number3{
+            ViewNumber1 = ViewNumber1 / number3
+            subNumber3 = ViewNumber1 % number3
+            while (subNumber3 > 0){
+                number1 = Int.random(in: 1...9)
+                number2 = Int.random(in: 1...9)
+                if subNumber3 == 0{
                     break
+                }
+            }
+            
+        }else if Marknum2 == 4 && number3 > ViewNumber1{
+            ViewNumber1 = number3 / ViewNumber1
+            subNumber3 = number3 % ViewNumber1
+            if subNumber3 > 0{
+                Marknum2 = Int.random(in: 1...3)
+                if Marknum2 == 1{
+                    ViewNumber2 = ViewNumber1 + number3
+                }else if Marknum2 == 2 && ViewNumber1 > number3{
+                    ViewNumber2 = ViewNumber1 - number3
+                }else if Marknum2 == 2 && number3 > ViewNumber1{
+                    ViewNumber2 = number3 - ViewNumber1
+                }else if Marknum2 == 3{
+                    ViewNumber2 = ViewNumber1 * number3
                 }
             }
         }
@@ -505,16 +562,37 @@ class ViewController: UIViewController {
             
             if Marknum2 == 1{
                 ViewNumber2 = ViewNumber1 + number3
-            }else if Marknum2 == 2{
+            }else if Marknum2 == 2 && ViewNumber1 > number3{
                 ViewNumber2 = ViewNumber1 - number3
+            }else if Marknum2 == 2 && number3 > ViewNumber1{
+                ViewNumber2 = number3 - ViewNumber1
             }else if Marknum2 == 3{
                 ViewNumber2 = ViewNumber1 * number3
-            }else if Marknum2 == 4{
-                while(subNumber4 > 0){
-                    ViewNumber2 = ViewNumber1 / number3
-                    subNumber4 = ViewNumber1 % number3
-                    if subNumber4 == 0{
+            }
+            if Marknum1 == 4 && ViewNumber1 > number3{
+                ViewNumber1 = ViewNumber1 / number3
+                subNumber3 = ViewNumber1 % number3
+                while (subNumber3 > 0){
+                    number1 = Int.random(in: 1...9)
+                    number2 = Int.random(in: 1...9)
+                    if subNumber3 == 0{
                         break
+                    }
+                }
+                
+            }else if Marknum2 == 4 && number3 > ViewNumber1{
+                ViewNumber1 = number3 / ViewNumber1
+                subNumber3 = number3 % ViewNumber1
+                if subNumber3 > 0{
+                    Marknum2 = Int.random(in: 1...3)
+                    if Marknum2 == 1{
+                        ViewNumber2 = ViewNumber1 + number3
+                    }else if Marknum2 == 2 && ViewNumber1 > number3{
+                        ViewNumber2 = ViewNumber1 - number3
+                    }else if Marknum2 == 2 && number3 > ViewNumber1{
+                        ViewNumber2 = number3 - ViewNumber1
+                    }else if Marknum2 == 3{
+                        ViewNumber2 = ViewNumber1 * number3
                     }
                 }
             }
