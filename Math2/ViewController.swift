@@ -453,14 +453,6 @@ class ViewController: UIViewController {
         set(button: Button2, str: num2)
         set(button: Button3, str: num3)
         ViewNumber2 = currentNumber2
-        print(number1)
-        print(number2)
-        print(number3)
-        print(currentNumber1)
-        print(currentNumber2)
-        print(Marknum1)
-        print(Marknum2)
-        print("##########")
     }
     
     func set(button: UIButton,str: String) {
