@@ -9,8 +9,6 @@ import UIKit
 import AVFoundation
 
 class ViewController: UIViewController {
-    
-    
     let AnswerPlayer = try!AVAudioPlayer(data: NSDataAsset(name:"CorrectA")!.data)
     let NotAnswerPlayer = try!AVAudioPlayer(data: NSDataAsset(name:"IncorrectA")!.data)
     
@@ -25,7 +23,7 @@ class ViewController: UIViewController {
     var num1: String!
     var num2: String!
     var num3: String!
-
+    
     var Anumber1: Int!
     var Anumber2: Int!
     var Anumber3: Int!
@@ -62,11 +60,7 @@ class ViewController: UIViewController {
     
     var select = 0
     
-    
-   
-    
     override func viewDidLoad() {
-    
         
         based()
         label1.layer.cornerRadius = 10
@@ -94,8 +88,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func nextButton(){
-        
-        
         set(button: AnswerNumber1, str: "0")
         set(button: AnswerNumber2, str: "0")
         set(button: AnswerNumber3, str: "0")
@@ -103,21 +95,6 @@ class ViewController: UIViewController {
         set(button: AnswerNumber5, str: "0")
         set(button: MarkButton1, str: "?")
         set(button: MarkButton2, str: "?")
-        
-        
-        based()
-    }
-    
-    @IBAction func passButton(){
-        
-        set(button: AnswerNumber1, str: "0")
-        set(button: AnswerNumber2, str: "0")
-        set(button: AnswerNumber3, str: "0")
-        set(button: AnswerNumber4, str: "0")
-        set(button: AnswerNumber5, str: "0")
-        set(button: MarkButton1, str: "?")
-        set(button: MarkButton2, str: "?")
-        
         
         based()
     }
@@ -135,12 +112,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func markcheck1(){
-            select = 3
-        }
+        select = 3
+    }
     
     @IBAction func markcheck2(){
-            select = 5
-        }
+        select = 5
+    }
     
     @IBAction func changeButton5(){
         select = 6
@@ -148,11 +125,10 @@ class ViewController: UIViewController {
     @IBAction func changeButton6(){
         select = 7
     }
-    
-    @IBAction func changeButton8(){
-        select = 8
-    }
-    
+    //
+    //    @IBAction func changeButton8(){
+    //        select = 8
+    //    }
     
     @IBAction func plus(){
         if(select == 3){
@@ -160,7 +136,6 @@ class ViewController: UIViewController {
             set(button: MarkButton1, str: "+")
         }else if(select == 5){
             set(button: MarkButton2, str: "+")
-            
         }
     }
     
@@ -185,8 +160,6 @@ class ViewController: UIViewController {
             set(button: MarkButton2, str: "÷")
         }
     }
-    
-    
     
     @IBAction func numberCard1(){
         if(select == 1){
@@ -238,145 +211,145 @@ class ViewController: UIViewController {
     }
     
     @IBAction func sameNumber0(){
-            if(select == 6){
-                set(button: AnswerNumber3, str: "0")
-                Anumber3 = Int(0)
-            }else if (select == 7){
-                set(button: AnswerNumber4, str: "0")
-                Anumber4 = Int(0)
-            }else if (select == 4){
-                set(button: AnswerNumber5, str: "0")
-                Anumber5 = Int(0)
-            }
+        if(select == 6){
+            set(button: AnswerNumber3, str: "0")
+            Anumber3 = Int(0)
+        }else if (select == 7){
+            set(button: AnswerNumber4, str: "0")
+            Anumber4 = Int(0)
+        }else if (select == 4){
+            set(button: AnswerNumber5, str: "0")
+            Anumber5 = Int(0)
         }
+    }
     
     @IBAction func sameNumber1(){
-            if(select == 6){
-                set(button: AnswerNumber3, str: "1")
-                Anumber3 = Int(1)
-            }else if (select == 7){
-                set(button: AnswerNumber4, str: "1")
-                Anumber4 = Int(1)
-            }else if (select == 4){
-                set(button: AnswerNumber5, str: "1")
-                Anumber5 = Int(1)
-            }
+        if(select == 6){
+            set(button: AnswerNumber3, str: "1")
+            Anumber3 = Int(1)
+        }else if (select == 7){
+            set(button: AnswerNumber4, str: "1")
+            Anumber4 = Int(1)
+        }else if (select == 4){
+            set(button: AnswerNumber5, str: "1")
+            Anumber5 = Int(1)
         }
-        
-        @IBAction func sameNumber2(){
-            if(select == 6){
-                set(button: AnswerNumber3, str: "2")
-                Anumber3 = Int(2)
-            }else if (select == 7){
-                set(button: AnswerNumber4, str: "2")
-                Anumber4 = Int(2)
-            }else if (select == 4){
-                set(button: AnswerNumber5, str: "2")
-                Anumber5 = Int(2)
-            }
+    }
+    
+    @IBAction func sameNumber2(){
+        if(select == 6){
+            set(button: AnswerNumber3, str: "2")
+            Anumber3 = Int(2)
+        }else if (select == 7){
+            set(button: AnswerNumber4, str: "2")
+            Anumber4 = Int(2)
+        }else if (select == 4){
+            set(button: AnswerNumber5, str: "2")
+            Anumber5 = Int(2)
         }
+    }
     
     
     @IBAction func sameNumber3(){
-            if(select == 6){
-                set(button: AnswerNumber3, str: "3")
-                Anumber3 = Int(3)
-            }else if (select == 7){
-                set(button: AnswerNumber4, str: "3")
-                Anumber4 = Int(3)
-            }else if (select == 4){
-                set(button: AnswerNumber5, str: "3")
-                Anumber5 = Int(3)
-            }
+        if(select == 6){
+            set(button: AnswerNumber3, str: "3")
+            Anumber3 = Int(3)
+        }else if (select == 7){
+            set(button: AnswerNumber4, str: "3")
+            Anumber4 = Int(3)
+        }else if (select == 4){
+            set(button: AnswerNumber5, str: "3")
+            Anumber5 = Int(3)
         }
-        
-        @IBAction func sameNumber4(){
-            if(select == 6){
-                set(button: AnswerNumber3, str: "4")
-                Anumber3 = Int(4)
-            }else if (select == 7){
-                set(button: AnswerNumber4, str: "4")
-                Anumber4 = Int(4)
-            }else if (select == 4){
-                set(button: AnswerNumber5, str: "4")
-                Anumber5 = Int(4)
-            }
+    }
+    
+    @IBAction func sameNumber4(){
+        if(select == 6){
+            set(button: AnswerNumber3, str: "4")
+            Anumber3 = Int(4)
+        }else if (select == 7){
+            set(button: AnswerNumber4, str: "4")
+            Anumber4 = Int(4)
+        }else if (select == 4){
+            set(button: AnswerNumber5, str: "4")
+            Anumber5 = Int(4)
         }
-
+    }
+    
     @IBAction func sameNumber5(){
-            if(select == 6){
-                set(button: AnswerNumber3, str: "5")
-                Anumber3 = Int(5)
-            }else if (select == 7){
-                set(button: AnswerNumber4, str: "5")
-                Anumber4 = Int(5)
-            }else if (select == 4){
-                set(button: AnswerNumber5, str: "5")
-                Anumber5 = Int(5)
-            }
+        if(select == 6){
+            set(button: AnswerNumber3, str: "5")
+            Anumber3 = Int(5)
+        }else if (select == 7){
+            set(button: AnswerNumber4, str: "5")
+            Anumber4 = Int(5)
+        }else if (select == 4){
+            set(button: AnswerNumber5, str: "5")
+            Anumber5 = Int(5)
         }
-        
-        @IBAction func sameNumber6(){
-            if(select == 6){
-                set(button: AnswerNumber3, str: "6")
-                Anumber3 = Int(6)
-            }else if (select == 7){
-                set(button: AnswerNumber4, str: "6")
-                Anumber4 = Int(6)
-            }else if (select == 4){
-                set(button: AnswerNumber5, str: "6")
-                Anumber5 = Int(6)
-            }
+    }
+    
+    @IBAction func sameNumber6(){
+        if(select == 6){
+            set(button: AnswerNumber3, str: "6")
+            Anumber3 = Int(6)
+        }else if (select == 7){
+            set(button: AnswerNumber4, str: "6")
+            Anumber4 = Int(6)
+        }else if (select == 4){
+            set(button: AnswerNumber5, str: "6")
+            Anumber5 = Int(6)
         }
-        
-        @IBAction func sameNumber7(){
-            if(select == 6){
-                set(button: AnswerNumber3, str: "7")
-                Anumber3 = Int(7)
-            }else if (select == 7){
-                set(button: AnswerNumber4, str: "7")
-                Anumber4 = Int(7)
-            }else if (select == 4){
-                set(button: AnswerNumber5, str: "7")
-                Anumber5 = Int(7)
-            }
+    }
+    
+    @IBAction func sameNumber7(){
+        if(select == 6){
+            set(button: AnswerNumber3, str: "7")
+            Anumber3 = Int(7)
+        }else if (select == 7){
+            set(button: AnswerNumber4, str: "7")
+            Anumber4 = Int(7)
+        }else if (select == 4){
+            set(button: AnswerNumber5, str: "7")
+            Anumber5 = Int(7)
         }
-        
-        @IBAction func sameNumber8(){
-            if(select == 6){
-                set(button: AnswerNumber3, str: "8")
-                Anumber3 = Int(8)
-            }else if (select == 7){
-                set(button: AnswerNumber4, str: "8")
-                Anumber4 = Int(8)
-            }else if (select == 4){
-                set(button: AnswerNumber5, str: "8")
-                Anumber5 = Int(8)
-            }
+    }
+    
+    @IBAction func sameNumber8(){
+        if(select == 6){
+            set(button: AnswerNumber3, str: "8")
+            Anumber3 = Int(8)
+        }else if (select == 7){
+            set(button: AnswerNumber4, str: "8")
+            Anumber4 = Int(8)
+        }else if (select == 4){
+            set(button: AnswerNumber5, str: "8")
+            Anumber5 = Int(8)
         }
-        
-        @IBAction func sameNumber9(){
-            if(select == 6){
-                set(button: AnswerNumber3, str: "9")
-                Anumber3 = Int(9)
-            }else if (select == 7){
-                set(button: AnswerNumber4, str: "9")
-                Anumber4 = Int(9)
-            }else if (select == 4){
-                set(button: AnswerNumber5, str: "9")
-                Anumber5 = Int(9)
-            }
+    }
+    
+    @IBAction func sameNumber9(){
+        if(select == 6){
+            set(button: AnswerNumber3, str: "9")
+            Anumber3 = Int(9)
+        }else if (select == 7){
+            set(button: AnswerNumber4, str: "9")
+            Anumber4 = Int(9)
+        }else if (select == 4){
+            set(button: AnswerNumber5, str: "9")
+            Anumber5 = Int(9)
         }
-
+    }
+    
+    
     
     @IBAction func AnswerCheckButton(){
-        var answerText1:String=MarkButton1.titleLabel?.text ?? ""
-        var answerText2:String=MarkButton2.titleLabel?.text ?? ""
+        var answerText1:String = MarkButton1.titleLabel?.text ?? ""
+        var answerText2:String = MarkButton2.titleLabel?.text ?? ""
         var currentNumber1: Int = 0
         var currentNumber2: Int = 0
         var subNumber1: Int = 0
         var subNumber2: Int = 0
-        
         
         if answerText1 == "+"{
             currentNumber1 = Anumber1 + Anumber2
@@ -385,17 +358,17 @@ class ViewController: UIViewController {
         }else if answerText1 == "×"{
             currentNumber1 = Anumber1 * Anumber2
         }else if answerText1 == "÷"{
-            while(subNumber1 > 0){
+            while(subNumber1 < 0){
                 currentNumber1 = Anumber1 / Anumber2
                 subNumber1 = Anumber1 % Anumber2
                 if subNumber1 == 0{
                     break
                 }
             }
+        }else {
+            print("error")
         }
-       
-        
-    
+
         if answerText2 == "+"{
             currentNumber2 = Anumber4 + Anumber5
         }else if answerText2 == "-"{
@@ -403,17 +376,19 @@ class ViewController: UIViewController {
         }else if answerText2 == "×"{
             currentNumber2 = Anumber4 * Anumber5
         }else if answerText2 == "÷"{
-            while(subNumber2 > 0){
+            while(subNumber2 < 0){
                 currentNumber2 = Anumber4 / Anumber5
                 subNumber2 = Anumber4 % Anumber5
                 if subNumber2 == 0{
                     break
                 }
             }
+        }else {
+            print("error")
         }
         print(currentNumber2)
         
-
+        
         if currentNumber2 == ViewNumber2{
             AnswerPlayer.play()
             print("正解")
@@ -424,85 +399,68 @@ class ViewController: UIViewController {
     }
     
     func based(){
-        
+        var currentNumber1: Int = 0
+        var currentNumber2: Int = 0
         number1 = Int.random(in: 1...9)
         number2 = Int.random(in: 1...9)
         number3 = Int.random(in: 1...9)
         
-        number1 = number1 ?? 0
-        number2 = number2 ?? 0
-        number3 = number3 ?? 0
-        
-        num1 = String(number1)
-        num2 = String(number2)
-        num3 = String(number3)
-        
-        print(number1)
-        print(number2)
-        print(number3)
-       
         Marknum1 = Int.random(in: 1...4)
         Marknum2 = Int.random(in: 1...4)
-        print(Marknum1)
-        print(Marknum2)
-        
-    
-        
-        
 
-        
-        number1 = Int.random(in: 1...9)
-        Marknum1 = Int.random(in: 1...4)
-        var currentNumber1: Int = 0
         if(Marknum1 == 2){
-            while(number2 < number1){
+            while(number2 > number1){
                 number2 = Int.random(in: 1...9)
             }
             currentNumber1 = number1 - number2
         }else if(Marknum1 == 4){
-            while(number1 % number2 == 0){
+            while(number1 % number2 != 0){
                 number2 = Int.random(in: 1...9)
             }
             currentNumber1 = number1 / number2
         }else {
-                number2 = Int.random(in: 1...9)
+            number2 = Int.random(in: 1...9)
             if(Marknum1 == 1){
                 currentNumber1 = number1 + number2
             }else if(Marknum1 == 3){
                 currentNumber1 = number1 * number2
             }
-            }
-        
-        Marknum2 = Int.random(in: 1...4)
-        var currentNumber2: Int = 0
-        if(Marknum2 == 2){
-            while(number3 < currentNumber1){
-                number3 = Int.random(in: 1...9)
-                currentNumber2 = currentNumber1 - number3
-            }
-        }else if(Marknum2 == 4){
-                while(currentNumber1 % number2 == 0){
-                    number3 = Int.random(in: 1...9)
-                }
-                currentNumber2 = currentNumber1 / number3
-        }else{
-            if(Marknum2 == 1){
-                currentNumber2 = currentNumber1 + number3
-            }else if(Marknum2 == 3){
-                currentNumber2 = currentNumber1 * number3
-            }
-            
-            
         }
-        
-        
-        
+
+        if(Marknum2 == 2){
+            while(number3 > currentNumber1){
+                number3 = Int.random(in: 1...9)
+            }
+            currentNumber2 = currentNumber1 - number3
+        }else if(Marknum2 == 4){
+            while(currentNumber1 % number3 != 0){
+                number3 = Int.random(in: 1...9)
+            }
+            currentNumber2 = currentNumber1 / number3
+        }else{
+                if(Marknum2 == 1){
+                    currentNumber2 = currentNumber1 + number3
+                }else if(Marknum2 == 3){
+                    currentNumber2 = currentNumber1 * number3
+                }
+        }
         label1.text = String(currentNumber2)
         label2.text = String(currentNumber2)
-        set(button: Button1, str: self.num1)
-        set(button: Button2, str: self.num2)
-        set(button: Button3, str: self.num3)
-        
+        num1 = String(number1)
+        num2 = String(number2)
+        num3 = String(number3)
+        set(button: Button1, str: num1)
+        set(button: Button2, str: num2)
+        set(button: Button3, str: num3)
+        ViewNumber2 = currentNumber2
+        print(number1)
+        print(number2)
+        print(number3)
+        print(currentNumber1)
+        print(currentNumber2)
+        print(Marknum1)
+        print(Marknum2)
+        print("##########")
     }
     
     func set(button: UIButton,str: String) {
@@ -514,5 +472,3 @@ class ViewController: UIViewController {
         }
     }
 }
-
-
