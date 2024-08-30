@@ -1,8 +1,9 @@
 {
   "data" : [
     {
-      "filename" : "クイズ正解1 (1).mp3",
-      "idiom" : "universal"
+      "filename" : "CorrectA.mp3",
+      "idiom" : "universal",
+      "universal-type-identifier" : "public.mp3"
     }
   ],
   "info" : {
