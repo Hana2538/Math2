@@ -275,6 +275,8 @@ class ViewController: UIViewController {
                 Anumber5 = Int(2)
             }
         }
+    
+    
     @IBAction func sameNumber3(){
             if(select == 6){
                 set(button: AnswerNumber3, str: "3")
@@ -445,163 +447,58 @@ class ViewController: UIViewController {
         print(Marknum2)
         
     
-        var ViewNumber1: Int = 0
-        ViewNumber2 = 0
-        var subNumber3: Int = 0
-        var subNumber4: Int = 0
+        
+        
 
         
-        if Marknum1 == 1{
-            ViewNumber1 = number1 + number2
-        }else if Marknum1 == 2 && number1 > number2{
-            ViewNumber1 = number1 - number2
-        }else if Marknum1 == 2 && number2 > number1{
-            ViewNumber1 = number2 - number1
-        }else if Marknum1 == 3{
-            ViewNumber1 = number1 * number2
-        }
-        if Marknum1 == 4 && number1 > number2{
-            ViewNumber1 = number1 / number2
-            subNumber3 = number1 % number2
-            while (subNumber3 > 0){
-                number1 = Int.random(in: 1...9)
+        number1 = Int.random(in: 1...9)
+        Marknum1 = Int.random(in: 1...4)
+        var currentNumber1: Int = 0
+        if(Marknum1 == 2){
+            while(number2 < number1){
                 number2 = Int.random(in: 1...9)
-                if subNumber3 == 0{
-                    break
+            }
+            currentNumber1 = number1 - number2
+        }else if(Marknum1 == 4){
+            while(number1 % number2 == 0){
+                number2 = Int.random(in: 1...9)
+            }
+            currentNumber1 = number1 / number2
+        }else {
+                number2 = Int.random(in: 1...9)
+            if(Marknum1 == 1){
+                currentNumber1 = number1 + number2
+            }else if(Marknum1 == 3){
+                currentNumber1 = number1 * number2
+            }
+            }
+        
+        Marknum2 = Int.random(in: 1...4)
+        var currentNumber2: Int = 0
+        if(Marknum2 == 2){
+            while(number3 < currentNumber1){
+                number3 = Int.random(in: 1...9)
+                currentNumber2 = currentNumber1 - number3
+            }
+        }else if(Marknum2 == 4){
+                while(currentNumber1 % number2 == 0){
+                    number3 = Int.random(in: 1...9)
                 }
+                currentNumber2 = currentNumber1 / number3
+        }else{
+            if(Marknum2 == 1){
+                currentNumber2 = currentNumber1 + number3
+            }else if(Marknum2 == 3){
+                currentNumber2 = currentNumber1 * number3
             }
             
-        }else if Marknum1 == 4 && number1 > number2{
-            ViewNumber1 = number1 / number2
-            subNumber3 = number1 % number2
-            while (subNumber3 > 0){
-                number1 = Int.random(in: 1...9)
-                number2 = Int.random(in: 1...9)
-                if subNumber3 == 0{
-                    break
-                }
-            }
-        }
-        
-        
-        while(ViewNumber1 >= 10){
-            number1 = Int.random(in: 1...9)
-            number2 = Int.random(in: 1...9)
-            if Marknum1 == 1{
-                ViewNumber1 = number1 + number2
-            }else if Marknum1 == 2 && number1 > number2{
-                ViewNumber1 = number1 - number2
-            }else if Marknum1 == 2 && number2 > number1{
-                ViewNumber1 = number2 - number1
-            }else if Marknum1 == 3{
-                ViewNumber1 = number1 * number2
-            }
-            if Marknum1 == 4 && number1 > number2{
-                ViewNumber1 = number1 / number2
-                subNumber3 = number1 % number2
-                while (subNumber3 > 0){
-                    number1 = Int.random(in: 1...9)
-                    number2 = Int.random(in: 1...9)
-                    if subNumber3 == 0{
-                        break
-                    }
-                }
-                
-            }else if Marknum1 == 4 && number1 > number2{
-                ViewNumber1 = number1 / number2
-                subNumber3 = number1 % number2
-                while (subNumber3 > 0){
-                    number1 = Int.random(in: 1...9)
-                    number2 = Int.random(in: 1...9)
-                    if subNumber3 == 0{
-                        break
-                    }
-                }
-            }
-        }
-        
-        if Marknum2 == 1{
-            ViewNumber2 = ViewNumber1 + number3
-        }else if Marknum2 == 2 && ViewNumber1 > number3{
-            ViewNumber2 = ViewNumber1 - number3
-        }else if Marknum2 == 2 && number3 > ViewNumber1{
-            ViewNumber2 = number3 - ViewNumber1
-        }else if Marknum2 == 3{
-            ViewNumber2 = ViewNumber1 * number3
-        }
-        if Marknum1 == 4 && ViewNumber1 > number3{
-            ViewNumber1 = ViewNumber1 / number3
-            subNumber3 = ViewNumber1 % number3
-            while (subNumber3 > 0){
-                number1 = Int.random(in: 1...9)
-                number2 = Int.random(in: 1...9)
-                if subNumber3 == 0{
-                    break
-                }
-            }
             
-        }else if Marknum2 == 4 && number3 > ViewNumber1{
-            ViewNumber1 = number3 / ViewNumber1
-            subNumber3 = number3 % ViewNumber1
-            if subNumber3 > 0{
-                Marknum2 = Int.random(in: 1...3)
-                if Marknum2 == 1{
-                    ViewNumber2 = ViewNumber1 + number3
-                }else if Marknum2 == 2 && ViewNumber1 > number3{
-                    ViewNumber2 = ViewNumber1 - number3
-                }else if Marknum2 == 2 && number3 > ViewNumber1{
-                    ViewNumber2 = number3 - ViewNumber1
-                }else if Marknum2 == 3{
-                    ViewNumber2 = ViewNumber1 * number3
-                }
-            }
         }
         
         
-        while(ViewNumber2 < 0){
-            
-            if Marknum2 == 1{
-                ViewNumber2 = ViewNumber1 + number3
-            }else if Marknum2 == 2 && ViewNumber1 > number3{
-                ViewNumber2 = ViewNumber1 - number3
-            }else if Marknum2 == 2 && number3 > ViewNumber1{
-                ViewNumber2 = number3 - ViewNumber1
-            }else if Marknum2 == 3{
-                ViewNumber2 = ViewNumber1 * number3
-            }
-            if Marknum1 == 4 && ViewNumber1 > number3{
-                ViewNumber1 = ViewNumber1 / number3
-                subNumber3 = ViewNumber1 % number3
-                while (subNumber3 > 0){
-                    number1 = Int.random(in: 1...9)
-                    number2 = Int.random(in: 1...9)
-                    if subNumber3 == 0{
-                        break
-                    }
-                }
-                
-            }else if Marknum2 == 4 && number3 > ViewNumber1{
-                ViewNumber1 = number3 / ViewNumber1
-                subNumber3 = number3 % ViewNumber1
-                if subNumber3 > 0{
-                    Marknum2 = Int.random(in: 1...3)
-                    if Marknum2 == 1{
-                        ViewNumber2 = ViewNumber1 + number3
-                    }else if Marknum2 == 2 && ViewNumber1 > number3{
-                        ViewNumber2 = ViewNumber1 - number3
-                    }else if Marknum2 == 2 && number3 > ViewNumber1{
-                        ViewNumber2 = number3 - ViewNumber1
-                    }else if Marknum2 == 3{
-                        ViewNumber2 = ViewNumber1 * number3
-                    }
-                }
-            }
-        }
         
-        print(ViewNumber2)
-        
-        label1.text = String(ViewNumber2)
-        label2.text = String(ViewNumber2)
+        label1.text = String(currentNumber2)
+        label2.text = String(currentNumber2)
         set(button: Button1, str: self.num1)
         set(button: Button2, str: self.num2)
         set(button: Button3, str: self.num3)
