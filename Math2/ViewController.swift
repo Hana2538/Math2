@@ -212,8 +212,12 @@ class ViewController: UIViewController {
     
     @IBAction func sameNumber0(){
         if(select == 6){
-            set(button: AnswerNumber3, str: "0")
-            Anumber3 = Int(0)
+            Anumber3 = (Anumber3 ?? 0) * 10 + 0
+            set(button: AnswerNumber3, str: String(Anumber3 ?? 0))
+            if(Anumber3 > 99){
+                set(button: AnswerNumber3, str: "0")
+                Anumber3 = Int(0)
+            }
         }else if (select == 7){
             set(button: AnswerNumber4, str: "0")
             Anumber4 = Int(0)
@@ -225,8 +229,12 @@ class ViewController: UIViewController {
     
     @IBAction func sameNumber1(){
         if(select == 6){
-            set(button: AnswerNumber3, str: "1")
-            Anumber3 = Int(1)
+            Anumber3 = (Anumber3 ?? 0) * 10 + 1
+            set(button: AnswerNumber3, str: String(Anumber3 ?? 0))
+            if(Anumber3 > 99){
+                set(button: AnswerNumber3, str: "1")
+                Anumber3 = Int(1)
+            }
         }else if (select == 7){
             set(button: AnswerNumber4, str: "1")
             Anumber4 = Int(1)
@@ -238,8 +246,12 @@ class ViewController: UIViewController {
     
     @IBAction func sameNumber2(){
         if(select == 6){
-            set(button: AnswerNumber3, str: "2")
-            Anumber3 = Int(2)
+            Anumber3 = (Anumber3 ?? 0) * 10 + 2
+            set(button: AnswerNumber3, str: String(Anumber3 ?? 0))
+            if(Anumber3 > 99){
+                set(button: AnswerNumber3, str: "2")
+                Anumber3 = Int(2)
+            }
         }else if (select == 7){
             set(button: AnswerNumber4, str: "2")
             Anumber4 = Int(2)
@@ -252,8 +264,12 @@ class ViewController: UIViewController {
     
     @IBAction func sameNumber3(){
         if(select == 6){
-            set(button: AnswerNumber3, str: "3")
-            Anumber3 = Int(3)
+            Anumber3 = (Anumber3 ?? 0) * 10 + 3
+            set(button: AnswerNumber3, str: String(Anumber3 ?? 0))
+            if(Anumber3 > 99){
+                set(button: AnswerNumber3, str: "3")
+                Anumber3 = Int(3)
+            }
         }else if (select == 7){
             set(button: AnswerNumber4, str: "3")
             Anumber4 = Int(3)
@@ -265,8 +281,12 @@ class ViewController: UIViewController {
     
     @IBAction func sameNumber4(){
         if(select == 6){
-            set(button: AnswerNumber3, str: "4")
-            Anumber3 = Int(4)
+            Anumber3 = (Anumber3 ?? 0) * 10 + 4
+            set(button: AnswerNumber3, str: String(Anumber3 ?? 0))
+            if(Anumber3 > 99){
+                set(button: AnswerNumber3, str: "4")
+                Anumber3 = Int(4)
+            }
         }else if (select == 7){
             set(button: AnswerNumber4, str: "4")
             Anumber4 = Int(4)
@@ -278,8 +298,12 @@ class ViewController: UIViewController {
     
     @IBAction func sameNumber5(){
         if(select == 6){
-            set(button: AnswerNumber3, str: "5")
-            Anumber3 = Int(5)
+            Anumber3 = (Anumber3 ?? 0) * 10 + 5
+            set(button: AnswerNumber3, str: String(Anumber3 ?? 0))
+            if(Anumber3 > 99){
+                set(button: AnswerNumber3, str: "5")
+                Anumber3 = Int(5)
+            }
         }else if (select == 7){
             set(button: AnswerNumber4, str: "5")
             Anumber4 = Int(5)
@@ -291,8 +315,12 @@ class ViewController: UIViewController {
     
     @IBAction func sameNumber6(){
         if(select == 6){
-            set(button: AnswerNumber3, str: "6")
-            Anumber3 = Int(6)
+            Anumber3 = (Anumber3 ?? 0) * 10 + 6
+            set(button: AnswerNumber3, str: String(Anumber3 ?? 0))
+            if(Anumber3 > 99){
+                set(button: AnswerNumber3, str: "6")
+                Anumber3 = Int(6)
+            }
         }else if (select == 7){
             set(button: AnswerNumber4, str: "6")
             Anumber4 = Int(6)
@@ -304,8 +332,12 @@ class ViewController: UIViewController {
     
     @IBAction func sameNumber7(){
         if(select == 6){
-            set(button: AnswerNumber3, str: "7")
-            Anumber3 = Int(7)
+            Anumber3 = (Anumber3 ?? 0) * 10 + 7
+            set(button: AnswerNumber3, str: String(Anumber3 ?? 0))
+            if(Anumber3 > 99){
+                set(button: AnswerNumber3, str: "7")
+                Anumber3 = Int(7)
+            }
         }else if (select == 7){
             set(button: AnswerNumber4, str: "7")
             Anumber4 = Int(7)
@@ -317,8 +349,12 @@ class ViewController: UIViewController {
     
     @IBAction func sameNumber8(){
         if(select == 6){
-            set(button: AnswerNumber3, str: "8")
-            Anumber3 = Int(8)
+            Anumber3 = (Anumber3 ?? 0) * 10 + 8
+            set(button: AnswerNumber3, str: String(Anumber3 ?? 0))
+            if(Anumber3 > 99){
+                set(button: AnswerNumber3, str: "8")
+                Anumber3 = Int(8)
+            }
         }else if (select == 7){
             set(button: AnswerNumber4, str: "8")
             Anumber4 = Int(8)
@@ -330,8 +366,12 @@ class ViewController: UIViewController {
     
     @IBAction func sameNumber9(){
         if(select == 6){
-            set(button: AnswerNumber3, str: "9")
-            Anumber3 = Int(9)
+            Anumber3 = (Anumber3 ?? 0) * 10 + 9
+            set(button: AnswerNumber3, str: String(Anumber3 ?? 0))
+            if(Anumber3 > 99){
+                set(button: AnswerNumber3, str: "9")
+                Anumber3 = Int(9)
+            }
         }else if (select == 7){
             set(button: AnswerNumber4, str: "9")
             Anumber4 = Int(9)
