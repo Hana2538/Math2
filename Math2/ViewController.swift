@@ -95,6 +95,8 @@ class ViewController: UIViewController {
         set(button: AnswerNumber5, str: "0")
         set(button: MarkButton1, str: "?")
         set(button: MarkButton2, str: "?")
+        Anumber3 = Int(0)
+        Anumber4 = Int(0)
         
         based()
     }
@@ -219,8 +221,12 @@ class ViewController: UIViewController {
                 Anumber3 = Int(0)
             }
         }else if (select == 7){
-            set(button: AnswerNumber4, str: "0")
-            Anumber4 = Int(0)
+            Anumber4 = (Anumber4 ?? 0) * 10 + 0
+            set(button: AnswerNumber4, str: String(Anumber4 ?? 0))
+            if(Anumber4 > 99){
+                set(button: AnswerNumber4, str: "0")
+                Anumber4 = Int(0)
+            }
         }else if (select == 4){
             set(button: AnswerNumber5, str: "0")
             Anumber5 = Int(0)
@@ -236,8 +242,12 @@ class ViewController: UIViewController {
                 Anumber3 = Int(1)
             }
         }else if (select == 7){
-            set(button: AnswerNumber4, str: "1")
-            Anumber4 = Int(1)
+            Anumber4 = (Anumber4 ?? 0) * 10 + 1
+            set(button: AnswerNumber4, str: String(Anumber4 ?? 0))
+            if(Anumber4 > 99){
+                set(button: AnswerNumber4, str: "1")
+                Anumber4 = Int(1)
+            }
         }else if (select == 4){
             set(button: AnswerNumber5, str: "1")
             Anumber5 = Int(1)
@@ -253,8 +263,12 @@ class ViewController: UIViewController {
                 Anumber3 = Int(2)
             }
         }else if (select == 7){
-            set(button: AnswerNumber4, str: "2")
-            Anumber4 = Int(2)
+            Anumber4 = (Anumber4 ?? 0) * 10 + 2
+            set(button: AnswerNumber4, str: String(Anumber4 ?? 0))
+            if(Anumber4 > 99){
+                set(button: AnswerNumber4, str: "2")
+                Anumber4 = Int(2)
+            }
         }else if (select == 4){
             set(button: AnswerNumber5, str: "2")
             Anumber5 = Int(2)
@@ -271,8 +285,12 @@ class ViewController: UIViewController {
                 Anumber3 = Int(3)
             }
         }else if (select == 7){
-            set(button: AnswerNumber4, str: "3")
-            Anumber4 = Int(3)
+            Anumber4 = (Anumber4 ?? 0) * 10 + 3
+            set(button: AnswerNumber4, str: String(Anumber4 ?? 0))
+            if(Anumber4 > 99){
+                set(button: AnswerNumber4, str: "3")
+                Anumber4 = Int(3)
+            }
         }else if (select == 4){
             set(button: AnswerNumber5, str: "3")
             Anumber5 = Int(3)
@@ -288,8 +306,12 @@ class ViewController: UIViewController {
                 Anumber3 = Int(4)
             }
         }else if (select == 7){
-            set(button: AnswerNumber4, str: "4")
-            Anumber4 = Int(4)
+            Anumber4 = (Anumber4 ?? 0) * 10 + 4
+            set(button: AnswerNumber4, str: String(Anumber4 ?? 0))
+            if(Anumber4 > 99){
+                set(button: AnswerNumber4, str: "4")
+                Anumber4 = Int(4)
+            }
         }else if (select == 4){
             set(button: AnswerNumber5, str: "4")
             Anumber5 = Int(4)
@@ -305,8 +327,12 @@ class ViewController: UIViewController {
                 Anumber3 = Int(5)
             }
         }else if (select == 7){
-            set(button: AnswerNumber4, str: "5")
-            Anumber4 = Int(5)
+            Anumber4 = (Anumber4 ?? 0) * 10 + 5
+            set(button: AnswerNumber4, str: String(Anumber4 ?? 0))
+            if(Anumber4 > 99){
+                set(button: AnswerNumber4, str: "5")
+                Anumber4 = Int(5)
+            }
         }else if (select == 4){
             set(button: AnswerNumber5, str: "5")
             Anumber5 = Int(5)
@@ -322,8 +348,12 @@ class ViewController: UIViewController {
                 Anumber3 = Int(6)
             }
         }else if (select == 7){
-            set(button: AnswerNumber4, str: "6")
-            Anumber4 = Int(6)
+            Anumber4 = (Anumber4 ?? 0) * 10 + 6
+            set(button: AnswerNumber4, str: String(Anumber4 ?? 0))
+            if(Anumber4 > 99){
+                set(button: AnswerNumber4, str: "6")
+                Anumber4 = Int(6)
+            }
         }else if (select == 4){
             set(button: AnswerNumber5, str: "6")
             Anumber5 = Int(6)
@@ -339,8 +369,12 @@ class ViewController: UIViewController {
                 Anumber3 = Int(7)
             }
         }else if (select == 7){
-            set(button: AnswerNumber4, str: "7")
-            Anumber4 = Int(7)
+            Anumber4 = (Anumber4 ?? 0) * 10 + 7
+            set(button: AnswerNumber4, str: String(Anumber4 ?? 0))
+            if(Anumber4 > 99){
+                set(button: AnswerNumber4, str: "7")
+                Anumber4 = Int(7)
+            }
         }else if (select == 4){
             set(button: AnswerNumber5, str: "7")
             Anumber5 = Int(7)
@@ -356,8 +390,12 @@ class ViewController: UIViewController {
                 Anumber3 = Int(8)
             }
         }else if (select == 7){
-            set(button: AnswerNumber4, str: "8")
-            Anumber4 = Int(8)
+            Anumber4 = (Anumber4 ?? 0) * 10 + 8
+            set(button: AnswerNumber4, str: String(Anumber4 ?? 0))
+            if(Anumber4 > 99){
+                set(button: AnswerNumber4, str: "8")
+                Anumber4 = Int(8)
+            }
         }else if (select == 4){
             set(button: AnswerNumber5, str: "8")
             Anumber5 = Int(8)
@@ -373,8 +411,12 @@ class ViewController: UIViewController {
                 Anumber3 = Int(9)
             }
         }else if (select == 7){
-            set(button: AnswerNumber4, str: "9")
-            Anumber4 = Int(9)
+            Anumber4 = (Anumber4 ?? 0) * 10 + 9
+            set(button: AnswerNumber4, str: String(Anumber4 ?? 0))
+            if(Anumber4 > 99){
+                set(button: AnswerNumber4, str: "9")
+                Anumber4 = Int(9)
+            }
         }else if (select == 4){
             set(button: AnswerNumber5, str: "9")
             Anumber5 = Int(9)
