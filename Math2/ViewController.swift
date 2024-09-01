@@ -450,6 +450,8 @@ class ViewController: UIViewController {
         }else {
             print("error")
         }
+        
+        print(currentNumber1)
 
         if answerText2 == "+"{
             currentNumber2 = Anumber4 + Anumber5
