@@ -62,6 +62,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         
+        
+        
         based()
         label1.layer.cornerRadius = 10
         label1.clipsToBounds = true
@@ -82,6 +84,8 @@ class ViewController: UIViewController {
         set(button: numberButon8, str: "8")
         set(button: numberButon9, str: "9")
     }
+    
+    
     
     @IBAction func backhomeButton(){
         self.dismiss(animated: true, completion: nil)
